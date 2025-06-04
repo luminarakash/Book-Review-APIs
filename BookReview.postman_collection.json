@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "36516479-1271-48a5-81ad-8dc6b860794b",
+		"name": "BookReview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34459307"
+	},
+	"item": [
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"akash\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDA0MTdiYTBhMzVjZGEzOTc4MGMwMyIsImlhdCI6MTc0OTA0MTc0MiwiZXhwIjoxNzQ5NjQ2NTQyfQ.V1nBjKKpbc-Cipc3bQtW2d9NO1eTdyJ7h169OqLIxSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"akash\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add books",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/auth/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get book",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/books/6840439ba0a35cda39780c07",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"books",
+								"6840439ba0a35cda39780c07"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "submit review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDA0MTdiYTBhMzVjZGEzOTc4MGMwMyIsImlhdCI6MTc0OTA0MTc0MiwiZXhwIjoxNzQ5NjQ2NTQyfQ.V1nBjKKpbc-Cipc3bQtW2d9NO1eTdyJ7h169OqLIxSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"rating\": 5,\r\n  \"comment\": \"Excellent Book!\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/books/6840439ba0a35cda39780c07/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"books",
+								"6840439ba0a35cda39780c07",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDA0MTdiYTBhMzVjZGEzOTc4MGMwMyIsImlhdCI6MTc0OTA0MTc0MiwiZXhwIjoxNzQ5NjQ2NTQyfQ.V1nBjKKpbc-Cipc3bQtW2d9NO1eTdyJ7h169OqLIxSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \r\n    \"title\": \"Node.js for Beginners\"\r\n\r\n  }\r\n]\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/books/search?q=node",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"books",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "node"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "update review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDA0MTdiYTBhMzVjZGEzOTc4MGMwMyIsImlhdCI6MTc0OTA0MTc0MiwiZXhwIjoxNzQ5NjQ2NTQyfQ.V1nBjKKpbc-Cipc3bQtW2d9NO1eTdyJ7h169OqLIxSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"rating\": 4,\r\n  \"comment\": \"Updated review!\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/reviews/684045c8a0a35cda39780c0e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"reviews",
+								"684045c8a0a35cda39780c0e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDA0MTdiYTBhMzVjZGEzOTc4MGMwMyIsImlhdCI6MTc0OTA0MTc0MiwiZXhwIjoxNzQ5NjQ2NTQyfQ.V1nBjKKpbc-Cipc3bQtW2d9NO1eTdyJ7h169OqLIxSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/reviews/684045c8a0a35cda39780c0e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"reviews",
+								"684045c8a0a35cda39780c0e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
